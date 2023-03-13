@@ -105,10 +105,10 @@ const displayPhoneDetails = phone =>{
     const modalTitle = document.getElementById('phoneDetailModalLabel');
     modalTitle.innerText = phone.name;
     const phoneDetails = document.getElementById('phone-details');
-    console.log(phone.mainFeatures.storage);
+    console.log(phone.releaseDate);
     phoneDetails.innerHTML = `
-        <p>Release Date: ${phone.releaseDate}</p>
-        <p>Storage: ${phone?.mainFeatures?.storage}</p>
+        <p>Release Date: ${phone.releaseDate?phone.releaseDate:"Not Released Yet"}</p>
+        <p>Storage: ${phone?.mainFeatures?.storage ? phone.mainFeatures.storage:"Storage Info is not given"}</p>
         <p>Others: ${phone.others ? phone.others.Bluetooth : 'No Bluetooth Information'}</p>
         <p>Sensor: ${phone.mainFeatures?.sensors ? phone.mainFeatures.sensors[0] : 'no sensor'}</p>
     `;
